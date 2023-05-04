@@ -27,6 +27,8 @@ The required packages to run this project can be found in requirement.txt file.
 
 # File to run
 All the project is complied in a single .py script named "apicode.py".
+
 To run this file add a simple text file in your root directory with a file named ".env" and add a line in this text file
  --> BLS_API_KEY=ENTER_YOUR_KEY_HERE
+ 
 To obtain this key follow the link -> [Public Data API Key Generator V2](https://www.bls.gov/developers/home.htm)
