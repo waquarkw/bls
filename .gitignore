@@ -149,6 +149,9 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
+# BLS_API_Key
+.env
+
 # Cython debug symbols
 cython_debug/
 
