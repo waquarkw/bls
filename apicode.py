@@ -3,12 +3,16 @@ import json
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
+from dotenv import load_dotenv
+
 
 # CES0500000003 - Average hourly earnings of all employees, total private, seasonally adjusted
 # CEU0500000001 - All employees, thousands, total private, not seasonally adjusted
 # CUSR0000SA0 - All items in U.S. city average, all urban consumers, seasonally adjusted
 
-BLS_API_key = "cde0c6b32c6341039ec07aee8d93e891"
+load_dotenv()
+BLS_API_key = os.environ.get('BLS_API_KEY')
 headers = {"Content-type" : "application/json"}
 series_ids =  ["CES0500000003","CEU0500000001", "CUSR0000SA0"]
 parameters = {
@@ -71,3 +75,5 @@ fig, ax = plt.subplots(figsize=(8,6))
 sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1, center=0, ax=ax)
 ax.set_title('Correlation Matrix')
 plt.show()
+
+#os.system("jupyter nbconvert --to notebook --execute --inplace pycode2nb.ipynb")
