@@ -26,4 +26,11 @@ The required packages to run this project can be found in requirement.txt file.
 9. Finally run a correlation analysis to see the correlation between the different data series using a Correlation matrix(coolwarm)
 
 # File to run
-All the project is complied in a single .py script named "apicode.py". Run this file to see the visuals.
+All the project is complied in a single .py script named "apicode.py".
+
+To run this file add a simple text file in your root directory with a file name ".env" and add a line in this text file
+ --> BLS_API_KEY=ENTER_YOUR_GENERATED_KEY_HERE
+ 
+To obtain this key follow the link -> [BLS Public Data API Key Generator V2](https://www.bls.gov/developers/home.htm)
+
+HURRAY! Now you are ready to run the project. Run the apicode.py file to see the visuals!!
