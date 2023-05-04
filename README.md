@@ -10,7 +10,7 @@ The idea of thsi project is to understand how the number of employment in the co
 More over how the salaries of the employees in the country run against the all items costs increase or decrease on a country basis.
 
 # Relevant Packages
-Make sure to use the command to Python 3.10 or above.
+Make sure to use Python 3.10 or above.
 
 The required packages to run this project can be found in requirement.txt file.
 
