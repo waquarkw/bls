@@ -16,10 +16,26 @@ load_dotenv()
 BLS_API_key = os.environ.get('BLS_API_KEY')
 headers = {"Content-type" : "application/json"}
 series_ids =  ["CES0500000003","CEU0500000001", "CUSR0000SA0"]
+
+# Interactive function to get start year and end year from user
+def get_years():
+    print("Enter start year (yyyy):")
+    start_year = input()
+    if start_year == "":
+        start_year = "2016" # Default start year if no input is provided
+    print("Enter end year (yyyy):")
+    end_year = input()
+    if end_year == "":
+        end_year = "2023" # Default end year if no input is provided
+    return start_year, end_year
+
+# Get start year and end year from user
+start_year, end_year = get_years()
+
 parameters = {
     "seriesid": series_ids,
-    "startyear":"2016", 
-    "endyear":"2023",
+    "startyear": start_year,
+    "endyear": end_year,
     "calculations" : True,
     "registrationkey" : BLS_API_key
 }
