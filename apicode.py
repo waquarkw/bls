@@ -5,6 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 from dotenv import load_dotenv
+import sys
 
 
 # CES0500000003 - Average hourly earnings of all employees, total private, seasonally adjusted
@@ -19,14 +20,18 @@ series_ids =  ["CES0500000003","CEU0500000001", "CUSR0000SA0"]
 
 # Interactive function to get start year and end year from user
 def get_years():
-    print("Enter start year (yyyy):")
-    start_year = input()
-    if start_year == "":
-        start_year = "2016" # Default start year if no input is provided
-    print("Enter end year (yyyy):")
-    end_year = input()
-    if end_year == "":
-        end_year = "2023" # Default end year if no input is provided
+    if len(sys.argv) > 1:
+        start_year = sys.argv[1]
+    else:
+        start_year = input("Enter start year (yyyy): ")
+        if start_year == "":
+            start_year = "2016" # Default start year if no input is provided
+    if len(sys.argv) > 2:
+        end_year = sys.argv[2]
+    else:
+        end_year = input("Enter end year (yyyy): ")
+        if end_year == "":
+            end_year = "2023" # Default end year if no input is provided
     return start_year, end_year
 
 # Get start year and end year from user
@@ -101,6 +106,3 @@ fig, ax = plt.subplots(figsize=(8,6))
 sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1, center=0, ax=ax)
 ax.set_title('Correlation Matrix')
 plt.show()
-
-
-#os.system("jupyter nbconvert --to notebook --execute --inplace pycode2nb.ipynb")
